@@ -2,7 +2,14 @@
 It's the most wonderful times of the year.. to learn Go..
 
 Build Go
-> go build
+```
+go build
+```
+
+Run Go
+```
+go run hello-world.go
+```
 
 Golang Resources
 > https://golang.org/
