@@ -16,5 +16,5 @@ Golang Resources
 
 Other References
 ```
-https://www.golang-book.com/public/pdf/gobook.0.pdf
+https://www.golang-book.com/books/intro
 ```
