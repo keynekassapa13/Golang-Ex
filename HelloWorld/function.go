@@ -18,6 +18,12 @@ func main() {
   fmt.Println(y)
   // turn integer to string
   fmt.Println("Add -- "+ strconv.Itoa(add(10, 20, 30)))
+
+  // function inside a function
+  subtract := func(x, y int) int {
+    return x - y
+  }
+  fmt.Println("Subtract -- " + strconv.Itoa(subtract(20, 10)))
 }
 
 // parameter of float64
