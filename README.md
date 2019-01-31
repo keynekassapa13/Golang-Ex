@@ -18,3 +18,10 @@ Other References
 ```
 https://www.golang-book.com/books/intro
 ```
+
+## Sort comparison between Python and Golang
+
+![](https://github.com/keynekassapa13/Golang-Ex/blob/master/sort/govspython.png)
+
+
+## Simple server for websites
