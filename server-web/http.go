@@ -1,6 +1,8 @@
 package main
 
 import (
+  "html/template"
+  "path/filepath"
   "fmt"
   "net/http"
   "io"
@@ -26,12 +28,22 @@ req *http.Request) {
     </html>`,
 )}
 
+
+func serveTemplate(w http.ResponseWriter, r *http.Request) {
+  lp := filepath.Join("templates", "layout.html")
+  fp := filepath.Join("templates", filepath.Clean(r.URL.Path))
+
+  tmpl, _ := template.ParseFiles(lp, fp)
+  tmpl.ExecuteTemplate(w, "layout", nil)
+}
+
 func route() {
   http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hello, you've requested: %s\n", r.URL.Path)
 	})
 
   http.HandleFunc("/hello", hello)
+  http.HandleFunc("/default/", serveTemplate)
 
   fs := http.FileServer(http.Dir("./static/"))
   http.Handle("/static/", http.StripPrefix("/static/", fs))
